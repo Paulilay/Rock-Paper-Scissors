@@ -1,0 +1,137 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* Apply reset styles to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Use Poppins font family for all text */
+}
+
+/* Body styling */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient( #007acc, #6DD5FA, #FFFFFF);
+}
+
+/* Text selection styling */
+::selection {
+  color: #fff;
+  background-color: royalblue;
+}
+
+/* Container styling */
+.container {
+  padding: 2rem 7rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Result images styling */
+.result_images {
+  display: flex;
+  column-gap: 7rem;
+}
+
+/* Animation for user result shake */
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Animation for CPU result shake */
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Styling for result images */
+.result_images img {
+  width: 100px;
+}
+
+/* Styling for user result image rotation */
+.user_result img {
+  transform: rotate(90deg);
+}
+
+/* Styling for CPU result image rotation */
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+/* Styling for result text */
+.result {
+  text-align: center;
+  font-size: 2rem;
+  color: royalblue;
+  margin-top: 1.5rem;
+}
+
+/* Styling for option images */
+.option_image img {
+  width: 50px;
+}
+
+/* Styling for option images container */
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-between;
+}
+
+/* Disable pointer events for option images when game is in 'start' state */
+.container.start .option_images {
+  pointer-events: none;
+}
+
+/* Styling for option image */
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* Styling for option image on hover */
+.option_image:hover {
+  opacity: 1;
+}
+
+/* Styling for active option image */
+.option_image.active {
+  opacity: 1;
+}
+
+/* Disable pointer events for option image's inner elements */
+.option_image img {
+  pointer-events: none;
+}
+
+/* Styling for option image text */
+.option_image p {
+  color: royalblue;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
